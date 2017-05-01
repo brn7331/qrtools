@@ -32,7 +32,7 @@ except:
     import Image
 import re
 from codecs import BOM_UTF8
-
+import random
 
 class QR(object):
 
@@ -118,7 +118,7 @@ class QR(object):
         # objects.
         self.data = data
         # get a temp directory
-        self.directory = os.path.join('/tmp', 'qr-%f' % time.time())
+        self.directory = os.path.join('/tmp', 'qr-%f-s' % (time.time(), random.randint(999999, 99999999))
         self.filename = filename
         os.makedirs(self.directory)
 
